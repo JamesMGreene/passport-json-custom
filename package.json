@@ -1,6 +1,6 @@
 {
   "name": "passport-json-custom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Passport.js strategy for custom authentication via JSON from the request body",
   "repository": {
     "type": "git",

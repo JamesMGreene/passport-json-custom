@@ -15,6 +15,22 @@ $ npm install passport-json-custom
 
 ## Usage
 
+### Prerequisites
+
+Before you can use this strategy, you _MUST_ ensure that your request (`req`) object always has a `body` property that is populated appropriately with parsed JSON.
+
+For example, if you are using Passport and this strategy within Express `4.x` or above, you would want to set up the [`'body-parser'` middleware](https://www.npmjs.com/package/body-parser) to parse the request body's JSON before setting up the Passport middleware:
+
+```js
+var express = require('express');
+var bodyParser = require('body-parser');
+
+var app = express();
+
+app.use(bodyParser.json());
+```
+
+
 ### Configure Strategy
 
 The JSON Custom authentication strategy authenticates users using any custom set of JSON-based credentials.  The strategy requires a `verify` callback, which accepts these credentials and calls `done` providing a user.
